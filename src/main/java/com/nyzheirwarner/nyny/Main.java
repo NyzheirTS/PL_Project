@@ -62,6 +62,7 @@ public class Main extends Application  {
         primeStage.setScene(scene);
         primeStage.getIcons().add(new Image(iconDict.get(ran_IC)));
         primeStage.show();
+
     }
 
 
