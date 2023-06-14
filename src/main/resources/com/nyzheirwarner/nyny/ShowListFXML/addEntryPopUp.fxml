@@ -8,13 +8,13 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="350.0" stylesheets="" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="350.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
    <children>
       <TabPane fx:id="Tabs" prefHeight="250.0" prefWidth="350.0" stylesheets="" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <tabs>
           <Tab text="Watched List">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #29292e;" stylesheets="">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #29292e;" stylesheets="@../style.css">
                      <children>
                         <TextField fx:id="showNameTXTField" layoutX="90.0" layoutY="12.0" prefHeight="25.0" prefWidth="250.0" />
                         <Label layoutX="11.0" layoutY="16.0" text="Show Name :" textFill="WHITE" />
@@ -32,13 +32,13 @@
           </Tab>
             <Tab text="Want to Watch">
               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="350.0" style="-fx-background-color: #29292e;" stylesheets="">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="350.0" style="-fx-background-color: #29292e;" stylesheets="@../style.css">
                      <children>
                         <TextField fx:id="showNameTXTField_W" layoutX="85.0" layoutY="21.0" prefHeight="25.0" prefWidth="250.0" />
                         <Label layoutX="5.0" layoutY="25.0" text="Show Name :" textFill="WHITE" />
                         <Label layoutX="8.0" layoutY="73.0" text="Show Type :" textFill="#fcfcfc" />
                         <Label layoutX="8.0" layoutY="123.0" text="# of Episodes :" textFill="WHITE" />
-                        <ChoiceBox fx:id="showTypeChoiceBOX_W" layoutX="82.0" layoutY="69.0" prefHeight="25.0" prefWidth="88.0" stylesheets="" />
+                        <ChoiceBox fx:id="showTypeChoiceBOX_W" layoutX="82.0" layoutY="69.0" prefHeight="25.0" prefWidth="88.0" stylesheets="@../style.css" />
                         <TextField fx:id="numberOfEpisodes_W" layoutX="98.0" layoutY="119.0" prefHeight="25.0" prefWidth="56.0" />
                         <Button fx:id="cancelListButton_W" layoutX="281.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelEntry" prefHeight="31.0" prefWidth="55.0" style="-fx-background-color: red;" text="Cancel" />
                         <Button fx:id="addToListButton_W" layoutX="215.0" layoutY="183.0" mnemonicParsing="false" onAction="#confirmEntry_W" prefHeight="31.0" prefWidth="55.0" style="-fx-background-color: green;" text="Add" />

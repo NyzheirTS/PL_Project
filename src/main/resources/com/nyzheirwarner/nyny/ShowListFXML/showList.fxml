@@ -8,18 +8,18 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="963.0" stylesheets="" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="754.0" prefWidth="963.0" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
    <children>
-      <Button fx:id="HomeButton" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeSceneSwitch" prefHeight="30.0" prefWidth="70.0" stylesheets="" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="CalenderButton" layoutX="70.0" layoutY="3.0" mnemonicParsing="false" onAction="#calenderSceneSwitch" prefHeight="30.0" prefWidth="70.0" stylesheets="" text="Calender" textFill="WHITE" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="0.0" />
-      <Button fx:id="ShowButton" layoutX="140.0" mnemonicParsing="false" onAction="#ShowListSwitchScene" prefHeight="30.0" prefWidth="76.0" stylesheets="" text="Show List" textFill="WHITE" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="HomeButton" layoutX="7.0" layoutY="14.0" mnemonicParsing="false" onAction="#homeSceneSwitch" prefHeight="30.0" prefWidth="70.0" stylesheets="@../style.css" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="CalenderButton" layoutX="70.0" layoutY="3.0" mnemonicParsing="false" onAction="#calenderSceneSwitch" prefHeight="30.0" prefWidth="70.0" stylesheets="@../style.css" text="Calender" textFill="WHITE" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="ShowButton" layoutX="140.0" mnemonicParsing="false" onAction="#ShowListSwitchScene" prefHeight="30.0" prefWidth="76.0" stylesheets="@../style.css" text="Show List" textFill="WHITE" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0" />
       <TabPane layoutX="73.0" layoutY="74.0" prefHeight="680.0" prefWidth="963.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="74.0">
         <tabs>
           <Tab fx:id="allShows" text="All Shows">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="allShowsTable" layoutX="214.0" layoutY="138.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="651.0" prefWidth="963.0" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="allShowsTable" layoutX="214.0" layoutY="138.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="651.0" prefWidth="963.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
                               <TableColumn fx:id="tableNumber" maxWidth="59.0" minWidth="59.0" prefWidth="59.0" resizable="false" text="#" />
                             <TableColumn fx:id="showName" maxWidth="362.0" minWidth="362.0" prefWidth="362.0" resizable="false" text="Show Title" />
@@ -36,7 +36,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="wantToWatchTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="695.0" prefWidth="963.0" stylesheets="" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="wantToWatchTable" nodeOrientation="LEFT_TO_RIGHT" prefHeight="695.0" prefWidth="963.0" stylesheets="@../style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <columns>
                               <TableColumn fx:id="tabelNumber_W" maxWidth="59.0" minWidth="59.0" prefWidth="59.0" resizable="false" text="#" />
                               <TableColumn fx:id="showName_W" maxWidth="362.0" minWidth="362.0" prefWidth="362.0" resizable="false" text="Show Title" />
@@ -51,7 +51,7 @@
           </Tab>
         </tabs>
       </TabPane>
-      <TextField fx:id="filterTxtField" layoutY="49.0" prefHeight="25.0" prefWidth="248.0" promptText="Search . . ." stylesheets="" />
+      <TextField fx:id="filterTxtField" layoutY="49.0" prefHeight="25.0" prefWidth="248.0" promptText="Search . . ." stylesheets="@../style.css" />
       <Button fx:id="addEntryButton" layoutX="894.0" layoutY="49.0" mnemonicParsing="false" onAction="#addEntrySwitch" text="Add Entry" AnchorPane.rightAnchor="0.0" />
    </children>
 </AnchorPane>
