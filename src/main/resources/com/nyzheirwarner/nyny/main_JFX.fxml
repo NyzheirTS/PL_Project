@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.nyzheirwarner.nyny.Controller">
-  <padding>
-    <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-  </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-  <Label fx:id="welcomeText"/>
-  <Button text="Hello!" onAction="#onHelloButtonClick"/>
-</VBox>
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="601.0" prefWidth="959.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
+  <children>
+    <Label fx:id="Text" layoutX="330.0" layoutY="63.0" prefHeight="127.0" prefWidth="260.0" text="Home" textFill="#e8e8e8">
+      <font>
+        <Font size="96.0" />
+      </font>
+    </Label>
+    <Button fx:id="HomeButton" layoutX="7.0" layoutY="14.0" minWidth="52.0" mnemonicParsing="false" onAction="#homeSceneSwitch" prefHeight="30.0" prefWidth="70.0" stylesheets="@style.css" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+    <Button fx:id="CalenderButton" layoutX="70.0" layoutY="3.0" mnemonicParsing="false" onAction="#calenderSceneSwitch" prefHeight="30.0" prefWidth="70.0" stylesheets="@style.css" text="Calender" textFill="WHITE" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="0.0" />
+    <Button fx:id="ShowButton" layoutX="140.0" mnemonicParsing="false" onAction="#ShowListSwitchScene" prefHeight="30.0" prefWidth="76.0" stylesheets="@style.css" text="Show List" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0" />
+    <Button fx:id="financeBroSwitch" layoutX="216.0" mnemonicParsing="false" onAction="#financeBroSwitch" prefHeight="30.0" prefWidth="76.0" stylesheets="@style.css" text="Finance" textFill="WHITE" textOverrun="CLIP" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="0.0" />
+  </children>
+</AnchorPane>

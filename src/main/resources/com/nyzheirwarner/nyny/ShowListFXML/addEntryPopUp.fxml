@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="250.0" prefWidth="350.0" stylesheets="" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
+   <children>
+      <TabPane fx:id="Tabs" prefHeight="250.0" prefWidth="350.0" stylesheets="" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="Watched List">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #29292e;" stylesheets="">
+                     <children>
+                        <TextField fx:id="showNameTXTField" layoutX="90.0" layoutY="12.0" prefHeight="25.0" prefWidth="250.0" />
+                        <Label layoutX="11.0" layoutY="16.0" text="Show Name :" textFill="WHITE" />
+                        <Label layoutX="11.0" layoutY="60.0" text="Show Type :" textFill="#fcfcfc" />
+                        <Label layoutX="11.0" layoutY="102.0" text="Number of Episodes :" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="145.0" text="Score :" textFill="WHITE" />
+                        <TextField fx:id="numberOfEpisodesField" layoutX="137.0" layoutY="98.0" prefHeight="25.0" prefWidth="56.0" />
+                        <ChoiceBox fx:id="scoreChoiceBox" layoutX="68.0" layoutY="141.0" prefHeight="25.0" prefWidth="63.0" />
+                        <Button fx:id="addToListButton" layoutX="281.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelEntry" prefHeight="31.0" prefWidth="55.0" style="-fx-background-color: red;" text="Cancel" />
+                        <Button fx:id="cancelListButton" layoutX="215.0" layoutY="183.0" mnemonicParsing="false" onAction="#confirmEntry" prefHeight="31.0" prefWidth="55.0" style="-fx-background-color: green;" text="Add" />
+                        <ChoiceBox fx:id="showTypeChoiceBOX" layoutX="81.0" layoutY="56.0" prefHeight="25.0" prefWidth="83.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Want to Watch">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="350.0" style="-fx-background-color: #29292e;" stylesheets="">
+                     <children>
+                        <TextField fx:id="showNameTXTField_W" layoutX="85.0" layoutY="21.0" prefHeight="25.0" prefWidth="250.0" />
+                        <Label layoutX="5.0" layoutY="25.0" text="Show Name :" textFill="WHITE" />
+                        <Label layoutX="8.0" layoutY="73.0" text="Show Type :" textFill="#fcfcfc" />
+                        <Label layoutX="8.0" layoutY="123.0" text="# of Episodes :" textFill="WHITE" />
+                        <ChoiceBox fx:id="showTypeChoiceBOX_W" layoutX="82.0" layoutY="69.0" prefHeight="25.0" prefWidth="88.0" stylesheets="" />
+                        <TextField fx:id="numberOfEpisodes_W" layoutX="98.0" layoutY="119.0" prefHeight="25.0" prefWidth="56.0" />
+                        <Button fx:id="cancelListButton_W" layoutX="281.0" layoutY="183.0" mnemonicParsing="false" onAction="#cancelEntry" prefHeight="31.0" prefWidth="55.0" style="-fx-background-color: red;" text="Cancel" />
+                        <Button fx:id="addToListButton_W" layoutX="215.0" layoutY="183.0" mnemonicParsing="false" onAction="#confirmEntry_W" prefHeight="31.0" prefWidth="55.0" style="-fx-background-color: green;" text="Add" />
+                        <Label layoutX="175.0" layoutY="102.0" prefHeight="17.0" prefWidth="43.0" text="Genre :" textFill="WHITE" />
+                        <TextField fx:id="genreTxtBox_W" layoutX="220.0" layoutY="98.0" prefHeight="24.0" prefWidth="100.0" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

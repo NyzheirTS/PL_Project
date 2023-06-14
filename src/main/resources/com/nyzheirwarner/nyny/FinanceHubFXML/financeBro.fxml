@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.nyzheirwarner.nyny.Controller">
+   <children>
+      <Button fx:id="financeBroSwitch" layoutX="216.0" mnemonicParsing="false" onAction="#financeBroSwitch" prefHeight="30.0" prefWidth="70.0" text="Finance" AnchorPane.leftAnchor="216.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="HomeButton" mnemonicParsing="false" onAction="#homeSceneSwitch" prefHeight="30.0" prefWidth="70.0" text="Home" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="CalenderButton" layoutX="72.0" mnemonicParsing="false" onAction="#calenderSceneSwitch" prefHeight="30.0" prefWidth="70.0" text="Calender" textFill="WHITE" AnchorPane.leftAnchor="70.0" AnchorPane.topAnchor="0.0" />
+      <Button fx:id="ShowButton" layoutX="144.0" mnemonicParsing="false" onAction="#ShowListSwitchScene" prefHeight="30.0" prefWidth="76.0" text="Show List" textFill="WHITE" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0" />
+   </children>
+</AnchorPane>
