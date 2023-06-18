@@ -50,7 +50,7 @@ public class Main extends Application  {
         Random ran = new Random();
         int ran_IC = ran.nextInt(6);
 
-        Dictionary<Integer,String> iconDict = new Hashtable<>();
+        HashMap<Integer,String> iconDict = new HashMap<>();
         iconDict.put(0,"C:\\Users\\eshas\\IdeaProjects\\PL_Project\\src\\main\\resources\\com\\nyzheirwarner\\nyny\\Images\\Screenshot 2023-05-08 224137.png");
         iconDict.put(1,"C:\\Users\\eshas\\IdeaProjects\\PL_Project\\src\\main\\resources\\com\\nyzheirwarner\\nyny\\Images\\Screenshot 2023-04-16 192235.png");
         iconDict.put(2,"C:\\Users\\eshas\\IdeaProjects\\PL_Project\\src\\main\\resources\\com\\nyzheirwarner\\nyny\\Images\\WDRY0779.JPG");
@@ -64,8 +64,6 @@ public class Main extends Application  {
         primeStage.show();
 
     }
-
-
     public static void main(String[] args) throws IOException, InterruptedException {
         launch();
         /*
@@ -80,5 +78,4 @@ public class Main extends Application  {
         System.out.println(response.body());
          */
     }
-
 }

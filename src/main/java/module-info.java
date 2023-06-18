@@ -6,8 +6,10 @@ module com.nyzheirwarner.nyny {
     requires annotations;
     requires java.prefs;
     requires java.net.http;
-            
-                            
+    requires com.calendarfx.view;
+    requires org.slf4j;
+
+
     opens com.nyzheirwarner.nyny to javafx.fxml;
     exports com.nyzheirwarner.nyny;
 }

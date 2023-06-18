@@ -1,5 +1,6 @@
 package com.nyzheirwarner.nyny;
 
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -12,21 +13,30 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-
+import com.calendarfx.model.Calendar;
+import com.calendarfx.model.Calendar.Style;
+import com.calendarfx.model.CalendarSource;
+import com.calendarfx.view.CalendarView;
 import ShowList.*;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ResourceBundle;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+
 
 // TO GET TO RUN AGAIN ADD implements Initializable to controller class.
 public class Controller extends SqlDatabaseConnect implements Initializable{
+    //final static Logger logger = LoggerFactory.getLogger(Controller.class);
+
     // all variables needed for want to watch table.
     public TableView<wantToWatch> wantToWatchTable = new TableView<>();
     public TableColumn<wantToWatch, Integer> tabelNumber_W = new TableColumn<>();
@@ -86,31 +96,30 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
     public void homeSceneSwitch(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("main_JFX.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
         stage.show();
         HomeButton.setUnderline(false);
 
     }
     public void calenderSceneSwitch(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("usrCalenderFXML/usrCalender.fxml"));
+        //TODO fix the mf thing so i can get to other pages in my app
+
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        stage.setScene(new Scene(setMyView()));
+        stage.centerOnScreen();
+
         stage.show();
     }
     public void ShowListSwitchScene(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("ShowListFXML/showList.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
         stage.show();
     }
     public void financeBroSwitch(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("FinanceHubFXML/financeBro.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
+        stage.setScene(new Scene(root));
         stage.show();
     }
     public void addEntrySwitch(ActionEvent event) throws IOException{
@@ -289,5 +298,47 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
 
         return null;
     }
+
+     public Parent setMyView(){
+        CalendarView calendarView = new CalendarView();
+        Calendar birthdays = new Calendar("Birthdays"); // (2)
+        birthdays.setStyle(Style.STYLE1); // (3)
+
+        CalendarSource myCalendarSource = new CalendarSource("My Calendars");
+        myCalendarSource.getCalendars().addAll(birthdays);
+
+        calendarView.getCalendarSources().addAll(myCalendarSource); // (5)
+
+        calendarView.setRequestedTime(LocalTime.now());
+
+        Thread updateTimeThread = new Thread("Calendar Time Update Thread.") {
+          @Override
+            public void run(){
+              while(true){
+                  Platform.runLater(() -> {
+                      calendarView.setToday(LocalDate.now());
+                      calendarView.setTime(LocalTime.now());
+                  });
+                  try {
+                      //10 seconds
+                      sleep(10000);
+                  }
+                  catch(InterruptedException e){
+                      e.printStackTrace();
+                  }
+              }
+            }
+        };
+
+        updateTimeThread.setPriority(Thread.MIN_PRIORITY);
+        updateTimeThread.setDaemon(true);
+        updateTimeThread.start();
+
+
+        return calendarView;
+    }
+
+
+
 
 }
