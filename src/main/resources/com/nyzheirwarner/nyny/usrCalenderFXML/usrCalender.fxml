@@ -15,5 +15,6 @@
          </font>
       </Label>
       <Button fx:id="ShowButton" layoutX="140.0" mnemonicParsing="false" onAction="#ShowListSwitchScene" prefHeight="30.0" prefWidth="76.0" stylesheets="" text="Show List" textFill="WHITE" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="0.0" />
+      <AnchorPane fx:id="calendarPane" layoutX="5.0" layoutY="30.0" prefHeight="724.0" prefWidth="956.0" />
    </children>
 </AnchorPane>

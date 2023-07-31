@@ -1,5 +1,11 @@
 package com.nyzheirwarner.nyny;
 
+import ShowList.Shows;
+import ShowList.wantToWatch;
+import com.calendarfx.model.Calendar;
+import com.calendarfx.model.Calendar.Style;
+import com.calendarfx.model.CalendarSource;
+import com.calendarfx.view.CalendarView;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,23 +19,20 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
-import com.calendarfx.model.Calendar;
-import com.calendarfx.model.Calendar.Style;
-import com.calendarfx.model.CalendarSource;
-import com.calendarfx.view.CalendarView;
-import ShowList.*;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ResourceBundle;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.nyzheirwarner.nyny.Main;
 
 
 
@@ -77,11 +80,12 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
     public TextField filterTxtField = new TextField();
     public TextField genreTxtBox_W;
     public Button financeBroSwitch;
+    public AnchorPane calendarPane;
+    public ImageView imageView;
     private String[] showTypeChoice = {"Movie","TV","Anime"};
     private String[] showTypeChoice_w = {"Movie","TV","Anime"};
     private Integer[] showScoreChoice = {1,2,3,4,5,6,7,8,9,10};
     private Stage stage;
-    private Scene scene;
     private Parent root;
     @FXML
     private WebView webView;
@@ -92,6 +96,10 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
 
     public Controller() throws SQLException {
     }
+
+   //' ScreenController screenControl = new ScreenController(new Scene(root));
+
+
 
     public void homeSceneSwitch(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("main_JFX.fxml"));
@@ -107,6 +115,7 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(setMyView()));
         stage.centerOnScreen();
+
 
         stage.show();
     }
@@ -131,6 +140,7 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
         stage.show();
 
     }
+
     public void confirmEntry(ActionEvent event) {
 
         String show_name = showNameTXTField.getText();
@@ -174,6 +184,18 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
         addColum();
         DB_CONNECT();
         DB_CONNECT_W();
+
+        Main main = null;
+        try {
+            main = new Main();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        //imageView.setImage(new Image(main.iconPicker()));
 
 
 
@@ -338,6 +360,9 @@ public class Controller extends SqlDatabaseConnect implements Initializable{
         return calendarView;
     }
 
+    public void onMouseClick(){
+
+    }
 
 
 
